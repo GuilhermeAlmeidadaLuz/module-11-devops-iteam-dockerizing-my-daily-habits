@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build            # gera os arquivos estáticos em /app/dist
+RUN npm run build
 
 # ---- Estágio 2: SERVE (só o nginx + os estáticos, imagem final pequena) ----
 FROM nginx:1.27-alpine
